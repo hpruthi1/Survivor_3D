@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ef35c4f677d5714bbb9449df377c4e0, type: 3}
+  m_Name: Meat
+  m_EditorClassIdentifier: 
+  Itemname: Meat
+  Description: Meat..Increase player health by 15 points..
+  ItemPrefabImage: {fileID: 2955255885130084521, guid: 4657c6fa0d31db24aae99e2f36cad9af,
+    type: 3}
+  ItemGameobject: {fileID: 4781744135307831921, guid: 4635b8fccd8f42343b1820f8e3336269,
+    type: 3}
+  renderImage: {fileID: 5745038672170413140, guid: b167d28761973bd49ab0d7c597a64c81,
+    type: 3}
+  type: 0
+  Weight: 20
+  inventory: {fileID: 11400000, guid: ef0f266d81776274dbdce9b4da91e13a, type: 2}
+  Healthincrease: 15
+  hungerDecrease: 0

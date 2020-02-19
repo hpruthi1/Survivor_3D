@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ef35c4f677d5714bbb9449df377c4e0, type: 3}
+  m_Name: Pineapple
+  m_EditorClassIdentifier: 
+  Itemname: Pineapple
+  Description: Pineapple.. Increase player health by 10 points...
+  ItemPrefabImage: {fileID: 2510871182374982217, guid: 92a4469b9bdf1a349becad91c0d1b1cf,
+    type: 3}
+  ItemGameobject: {fileID: 1962579852866159095, guid: bf498a4e8e735b745945defc5906995e,
+    type: 3}
+  renderImage: {fileID: 6024110358514315548, guid: b3a070d588ba31d41a2fd05ce56f59a4,
+    type: 3}
+  type: 0
+  Weight: 10
+  inventory: {fileID: 11400000, guid: ef0f266d81776274dbdce9b4da91e13a, type: 2}
+  Healthincrease: 10
+  hungerDecrease: 0
