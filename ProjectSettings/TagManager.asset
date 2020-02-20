@@ -9,6 +9,7 @@ TagManager:
   - finger
   - eys
   - leg
+  - Bandage
   layers:
   - Default
   - TransparentFX

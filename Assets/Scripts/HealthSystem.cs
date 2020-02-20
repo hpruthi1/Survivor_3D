@@ -35,4 +35,9 @@ public class HealthSystem : MonoBehaviour
     {
         Health -= damage;
     }
+
+    public void IncHealth(float health)
+    {
+        Health += health;
+    }
 }

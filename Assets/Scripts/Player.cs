@@ -169,4 +169,13 @@ public class Player : MonoBehaviour
         SceneManager.LoadScene("GameOver");
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Bandage"))
+        {
+            gameObject.GetComponent<HealthSystem>().IncHealth(5);
+            Destroy(other.gameObject);
+        }
+    }
+
 }
