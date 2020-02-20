@@ -129,7 +129,7 @@ public class Player : MonoBehaviour
         animator.SetBool("Jump", canJump);
 
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !isplayerdead)
         {
             if (gameObject.GetComponent<HealthSystem>().Health >= 90f)
             {
@@ -144,14 +144,13 @@ public class Player : MonoBehaviour
         if (gameObject.GetComponent<HealthSystem>().Health == 0f)
         {
             isplayerdead = true;
-           // enemy.GetComponent<NavMeshAgent>().isStopped = true;
+            enemy.GetComponent<NavMeshAgent>().isStopped = true;
             animator.SetTrigger("isDead");
             
         }
 
         if (isplayerdead)
         {
-            FindObjectOfType<Audiomanager>().Play("deathOfEnemy");
             StartCoroutine(DeathScene());
         }
     }

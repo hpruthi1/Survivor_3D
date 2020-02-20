@@ -32,8 +32,8 @@ public class AI : MonoBehaviour
     private void OnTriggerStay(Collider other)
     { 
         transform.LookAt(player);
-
-        if(stood)
+        
+        if (stood)
         {
             var navAgent = GetComponent<NavMeshAgent>();
 
@@ -51,11 +51,13 @@ public class AI : MonoBehaviour
 
                     navAgent.isStopped = true;
                     animator.SetBool("attacks",true);
+                    //FindObjectOfType<Audiomanager>().Play("manyPunches");
 
                 }
                 else
                 {
                     animator.SetBool("attacks",false);
+                    //FindObjectOfType<Audiomanager>().Play("enemyroar");
                     navAgent.SetDestination(other.transform.position);
                     navAgent.isStopped = false;
                 }
@@ -79,6 +81,11 @@ public class AI : MonoBehaviour
     void punchanim()
     {
         animator.SetBool("attacks",true);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        FindObjectOfType<Audiomanager>().Play("enemyroar");
     }
 
 }

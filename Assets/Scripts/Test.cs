@@ -35,12 +35,15 @@ public class Test : MonoBehaviour
     {
         if (other.gameObject.CompareTag("finger"))
         {
+            FindObjectOfType<Audiomanager>().Play("punchofplayer");
             Animator.SetTrigger("damage");
             gameObject.GetComponent<HealthSystem>().Damage(10);
         }
 
         if (other.gameObject.CompareTag("leg"))
         {
+            FindObjectOfType<Audiomanager>().Play("punchofplayer");
+
             Animator.SetTrigger("damage");
             gameObject.GetComponent<HealthSystem>().Damage(5);
         }
