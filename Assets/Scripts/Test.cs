@@ -25,9 +25,8 @@ public class Test : MonoBehaviour
         healthsystem.Health = Mathf.Clamp(healthsystem.Health, 0, 100);
         if (gameObject.GetComponent<HealthSystem>().Health == 0f)
         {
-            Destroy(gameObject);
-            Destroy(finger);
-            Destroy(EnemyBody);
+            StartCoroutine(DeathofEnemy());
+            
         }
     }
 
@@ -47,5 +46,14 @@ public class Test : MonoBehaviour
             Animator.SetTrigger("damage");
             gameObject.GetComponent<HealthSystem>().Damage(5);
         }
+    }
+
+    IEnumerator DeathofEnemy()
+    {
+       Animator.SetTrigger("Dead");
+       yield return new WaitForSeconds(3f);
+        Destroy(gameObject);
+        Destroy(finger);
+        Destroy(EnemyBody);
     }
 }
