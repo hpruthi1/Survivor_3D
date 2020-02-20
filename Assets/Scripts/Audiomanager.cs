@@ -10,7 +10,7 @@ public class Audiomanager:MonoBehaviour
     public static Audiomanager Instance;
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+       // DontDestroyOnLoad(gameObject);
         if(Instance==null)
         {
             Instance = this;

@@ -67,7 +67,7 @@ public class UImanager : MonoBehaviour
     IEnumerator SceneLoad()
     {
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
     
 

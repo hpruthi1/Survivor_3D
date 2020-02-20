@@ -51,13 +51,11 @@ public class AI : MonoBehaviour
 
                     navAgent.isStopped = true;
                     animator.SetBool("attacks",true);
-                    //FindObjectOfType<Audiomanager>().Play("manyPunches");
-
+                   
                 }
                 else
                 {
                     animator.SetBool("attacks",false);
-                    //FindObjectOfType<Audiomanager>().Play("enemyroar");
                     navAgent.SetDestination(other.transform.position);
                     navAgent.isStopped = false;
                 }

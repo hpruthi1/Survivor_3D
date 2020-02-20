@@ -19,11 +19,12 @@ public class Player : MonoBehaviour
     public float rotationSpeed = 30.0f;
     public float walkSpeed = 10.0f;
     public float runspeed = 10f;
-    public Image HealthBar, hungerBar;
+    public Image HealthBar, hungerBar,energyBar;
     private float dummyspeed;
     public InventoryObject inventory;
     public HungerSystem hunger;
     private HealthSystem healthsystem;
+    private EnergySystem energySystem;
     public InventoryDisplay inventoryDisplay;
     public GameObject popup;
     public GameObject enemy;
@@ -36,6 +37,7 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
         hunger = GetComponent<HungerSystem>();
         healthsystem = GetComponent<HealthSystem>();
+        energySystem = GetComponent<EnergySystem>();
     }
 
     void Start()
@@ -83,6 +85,8 @@ public class Player : MonoBehaviour
     {
         hunger.Hunger = Mathf.Clamp(hunger.Hunger, 0, 100);
         hungerBar.fillAmount = hunger.Hunger / 100;
+        energyBar.fillAmount = energySystem.Energy / 100;
+        energySystem.Energy = Mathf.Clamp(energySystem.Energy, 0f, 100f);
         healthsystem.Health = Mathf.Clamp(healthsystem.Health, 0, 100);
         HealthBar.fillAmount = healthsystem.Health / 100;
         healthsystem.Health = healthsystem.Player_Hunger(healthsystem.Health);
@@ -131,11 +135,11 @@ public class Player : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && !isplayerdead)
         {
-            if (gameObject.GetComponent<HealthSystem>().Health >= 90f)
+            if (gameObject.GetComponent<EnergySystem>().Energy < 40f)
             {
                 animator.SetTrigger("attack");
             }
-            else
+            if(gameObject.GetComponent<EnergySystem>().Energy>=40f)
             {
                 animator.SetTrigger("lesshealth");
             }
@@ -144,7 +148,7 @@ public class Player : MonoBehaviour
         if (gameObject.GetComponent<HealthSystem>().Health == 0f)
         {
             isplayerdead = true;
-            enemy.GetComponent<NavMeshAgent>().isStopped = true;
+            //enemy.GetComponent<NavMeshAgent>().isStopped = true;
             animator.SetTrigger("isDead");
             
         }
@@ -160,6 +164,7 @@ public class Player : MonoBehaviour
         speed = 0f;
         transform.rotation = Quaternion.identity;
         animator.ResetTrigger("attack");
+        animator.ResetTrigger("lesshealth");
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene("GameOver");
     }
