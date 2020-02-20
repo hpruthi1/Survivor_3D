@@ -148,7 +148,6 @@ public class Player : MonoBehaviour
         if (gameObject.GetComponent<HealthSystem>().Health == 0f)
         {
             isplayerdead = true;
-            //enemy.GetComponent<NavMeshAgent>().isStopped = true;
             animator.SetTrigger("isDead");
             
         }
@@ -169,10 +168,11 @@ public class Player : MonoBehaviour
         SceneManager.LoadScene("GameOver");
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Bandage"))
         {
+            FindObjectOfType<Audiomanager>().Play("bandage");
             gameObject.GetComponent<HealthSystem>().IncHealth(5);
             Destroy(other.gameObject);
         }
