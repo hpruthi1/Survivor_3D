@@ -12,6 +12,7 @@ public class UImanager : MonoBehaviour
     public int TimeInMinutes = 1;
     public int currentDay = 0;
     public Text day;
+    
     void Start()
     {
         Inventorytab.SetActive(false);
@@ -64,11 +65,11 @@ public class UImanager : MonoBehaviour
         pop.SetActive(false);
     } 
     
+   
     IEnumerator SceneLoad()
     {
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene(4);
     }
-    
 
 }

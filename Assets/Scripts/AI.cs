@@ -48,10 +48,8 @@ public class AI : MonoBehaviour
             {
                 if (Vector3.Distance(gameObject.transform.position, other.transform.position) < distance)
                 {
-
                     navAgent.isStopped = true;
                     animator.SetBool("attacks",true);
-                   
                 }
                 else
                 {

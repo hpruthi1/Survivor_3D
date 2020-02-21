@@ -35,6 +35,7 @@ public class Test : MonoBehaviour
             StartCoroutine(DeathofEnemy());
             
         }
+
     }
 
     private void OnTriggerEnter(Collider other)

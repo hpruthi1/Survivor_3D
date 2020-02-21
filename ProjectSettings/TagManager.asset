@@ -10,6 +10,7 @@ TagManager:
   - eys
   - leg
   - Bandage
+  - powerattack
   layers:
   - Default
   - TransparentFX

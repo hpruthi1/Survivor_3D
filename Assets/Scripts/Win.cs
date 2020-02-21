@@ -24,6 +24,6 @@ public class Win : MonoBehaviour
 
     public void OnRestartButtonClick()
     {
-        SceneManager.LoadScene("Survivor");
+        SceneManager.LoadScene(0);
     }
 }
