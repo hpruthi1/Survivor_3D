@@ -47,13 +47,7 @@ public class UImanager : MonoBehaviour
         {
             Inventorytab.SetActive(false);
         }
-        currentDay = (int)(Time.realtimeSinceStartup / (TimeInMinutes * 60)) + 1;
-        day.text = Convert.ToString(currentDay);
-
-        if(currentDay == 3)
-        {
-            StartCoroutine(SceneLoad());
-        }
+       
 
     }
     public void PopupDisplay(GameObject pop)
